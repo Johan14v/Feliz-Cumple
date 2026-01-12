@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¡Feliz Cumpleaños! 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!----------------------------------------------->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <div class="gift-icon">🎁</div>
+            <h1 class="splash-title">¡Tienes una Sorpresa!</h1>
+            <button class="start-button" onclick="hideSplash()">Abrir Regalo</button>
+        </div>
+    </div>
+
+    <!----------------------------------------------->
+    <div id="loading-screen" class="loading-screen hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Preparando la celebración...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------------------->
+    <div id="main-content" class="main-content hidden">
+        <canvas id="confetti-canvas"></canvas>
+
+        <div class="music-control">
+            <button id="music-toggle" onclick="toggleMusic()">🔇</button>
+        </div>
+    <!----------------------------------------------->
+        <div class="container">
+            <div class="floating-balloons">
+                <div class="balloon-float" style="left: 10%">🎈</div>
+                <div class="balloon-float" style="left: 30%">🎈</div>
+                <div class="balloon-float" style="left: 50%">🎉</div>
+                <div class="balloon-float" style="left: 70%">🎈</div>
+                <div class="balloon-float" style="left: 90%">🎈</div>
+            </div>
+
+            <div class="balloon">🎈</div>
+            <div class="balloon delay-1">🎈</div>
+            <div class="balloon delay-2">🎈</div>
+
+            <h1 class="title">¡Feliz Cumpleaños Arianny!</h1>
+
+            <div class="cake">🎂</div>
+
+            <p class="message">
+            Hoy cumple años una persona a la cual, ella no lo sabe, pero le debo mucho.
+            Muchas gracias por tu apoyo, cariño incondicional y por estar ahí siempre.
+            Quise hacerte esta pequeña sorpresita, y eso que si me dejaba llevar por mis ideas no me hubiera dado tiempo para terminarlo, así que lo hice lo más resumido posible.
+            Espero que te guste mi niña.💕💖✨
+            </p>
+
+    <!----------------------------------------------->
+            <div class="counter-section">
+                <div class="counter-item">
+                    <div class="counter-number" id="days-counter">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="smiles-counter">0</div>
+                    <div class="counter-label">Sonrisas</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="memories-counter">0</div>
+                    <div class="counter-label">Recuerdos</div>
+                </div>
+            </div>
+
+    <!----------------------------------------------->
+            <div class="wishes-section">
+                <h2 class="wishes-title">Mensajitos (Click para revelar)</h2>
+                <div class="wishes-container">
+                    <div class="wish-card" onclick="flipCard(this)">
+                        <div class="wish-front">❤️</div>
+                        <div class="wish-back">Todo se siente un poco más bonito desde que estás</div>
+                    </div>
+                    <div class="wish-card" onclick="flipCard(this)">
+                        <div class="wish-front">🌟</div>
+                        <div class="wish-back">Brillas con una luz que nadie nunca podrá igualar</div>
+                    </div>
+                    <div class="wish-card" onclick="flipCard(this)">
+                        <div class="wish-front">💫</div>
+                        <div class="wish-back">Sin que lo sepas, ocupas un lugar muy especial en mi corazón</div>
+                    </div>
+                    <div class="wish-card" onclick="flipCard(this)">
+                        <div class="wish-front">🎨</div>
+                        <div class="wish-back">Tu sonrisa hace que cualquier día sea especial</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="surprise-btn" onclick="showSurprise()">
+                🎁 Abrir Sorpresa
+            </button>
+
+            <div class="decorations">
+                <span class="star">⭐</span>
+                <span class="star">✨</span>
+                <span class="star">💫</span>
+                <span class="star">🌟</span>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------------------------->
+    <div id="surprise-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSurprise()">&times;</span>
+            <h2 class="modal-title">¡Felicidades! 🎉</h2>
+            <p class="modal-text">
+            Hoy es tu día y no quería dejarlo pasar sin decirte lo especial que eres, no solo para mí, mi niña, sino para las personas que te rodean.
+            No sé exactamente en qué punto estamos, pero sí sé que me gusta tenerte cerca (no aquí conmigo, pero ajá). Me encanta hablar contigo, cómo me cuentas cómo has pasado tu día y las anécdotas de lo que te vive pasando, jajajaja.
+            Espero que este nuevo año de vida te regale muchas cosas bonitas, emoción y muuuuchas sonrisas, porque te mereces todas y cada una de ellas… Y si yo puedo estar en alguna de ellas, sería un gran honor.
+            Feliz cumpleaños, Arianny, que la pases súper bien hoy y siempre.💕✨
+            </p>
+            <div class="modal-emoji">🎊 🎈 🎁 🎂 ✨</div>
+        </div>
+    </div>
+
+    <!---------------------------------------------->
+    <audio id="background-music" loop>
+        <source src="Dardos.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
